@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+    <link rel="stylesheet" href="/product-details.css" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+  </head>
+  <body>
+    <!-- navbar -->
+    <header>
+      <a href="#" class="logo"> <i class="bx bxs-t-shirt"></i> Adidas </a>
+
+      <ul class="navbar">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- icons -->
+      <div class="header-icons">
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <a href="cart.html" class="cart-icon">
+          <i class="bx bx-cart-alt" id="cart-icon"></i>
+          <span id="cart-count">0</span>
+        </a>
+      </div>
+      <div>
+        <li><a href="#contact" id="logout">logout</a></li>
+      </div>
+
+      <!-- cart Box -->
+      <div class="cart">
+        <!-- box1 -->
+        <div class="box">
+          <img src="img/new1.png" alt="T-shirt 14A" />
+          <div class="text">
+            <h3>T-shirt 14A</h3>
+            <span>$50.05</span>
+            <span>XL</span>
+          </div>
+          <i class="bx bxs-trash-alt"></i>
+        </div>
+
+        <!-- box2 -->
+        <div class="box">
+          <img src="img/new2.png" alt="T-shirt 14A" />
+          <div class="text">
+            <h3>T-shirt 14A</h3>
+            <span>$50.05</span>
+            <span>XL</span>
+          </div>
+          <i class="bx bxs-trash-alt"></i>
+        </div>
+
+        <h2>Total: $100.10</h2>
+        <a href="#" class="btn">Checkout</a>
+      </div>
+    </header>
+    <section>
+      <div class="product-details">
+        <img id="product-image" src="" alt="Product Image" />
+        <h2 id="product-name"></h2>
+        <p>Price: $<span id="product-price"></span></p>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" value="1" min="1" />
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+    </section>
+    <!-- Start Footer -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer_header">
+          <h1 class="logo">Adidas</h1>
+          <ul class="social-links">
+            <li>
+              <a href="#"><i class="bx bxl-facebook"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bx bxl-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bx bxl-pinterest"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bx bxl-instagram"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-content">
+          <div class="col">
+            <h2>Our Brand</h2>
+            <ul>
+              <li><a href="#">How we work?</a></li>
+              <li><a href="#">Why Insure?</a></li>
+              <li><a href="#">View Plans</a></li>
+              <li><a href="#">Reviews</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2>Help</h2>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Cookies</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2>Contact</h2>
+            <ul>
+              <li><a href="#">Sales</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Live Chat</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2>Others</h2>
+            <ul>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Licenses</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="back-to-home">
+          <i class="bx bx-up-arrow-alt" id="backToHome"></i>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <script src="product-details.js"></script>
+  </body>
+</html>

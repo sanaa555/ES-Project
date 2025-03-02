@@ -1,0 +1,118 @@
+
+*{
+    padding: 0px;
+    margin: 0px;
+
+}
+
+#cart{
+    margin-top: 20px;
+    background-color: #f4f4f4;;
+}
+.Your cart{
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 500px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.cart-item .text {
+    flex-grow: 1;
+}
+
+.cart-item h3{
+    margin: 5px 0;
+    font-size: 18px;
+    color: #222;
+}
+
+.cart-item p {
+    margin: 3px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.remove {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.3s ease;
+    margin-left: 40px;
+}
+
+.remove:hover {
+    background-color: #a71d2a;
+}
+
+#total-price {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+#buy-now {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+#buy-now:hover {
+    background-color: #218838;
+}
+
+.empty-cart {
+    font-size: 20px;
+    font-weight: bold;
+    color: #777;
+    text-align: center;
+}

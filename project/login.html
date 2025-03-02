@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Ecommerce App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      :root {
+        --main-color: #fda702;
+        --second-color: #ebeff2;
+        --text-color: #fff;
+        --bg-color: #1a1a1a; 
+        --box-shadow: 2px 2px 10px 4px rgba(14, 55, 54, 0.15);
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+      .container {
+        width: 90%;
+        max-width: 400px;
+        background: #fff;
+        padding: 30px 40px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        text-align: center;
+      }
+      h2 {
+        color: var(--bg-color);
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+      .form-control {
+        margin-bottom: 20px;
+        position: relative;
+        text-align: left;
+      }
+      .form-control input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+      .form-control.success input {
+        border-color: green;
+      }
+      .form-control.error input {
+        border-color: red;
+      }
+      .form-control span {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+        display: block;
+        visibility: hidden;
+      }
+      .form-control.error span {
+        visibility: visible;
+      }
+      button {
+        width: 100%;
+        padding: 12px;
+        background-color: var(--main-color);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+     
+      p {
+        font-size: 14px;
+        color: #555;
+        margin-top: 10px;
+      }
+      p a {
+        color: var(--main-color);
+        text-decoration: none;
+        font-weight: bold;
+      }
+      p a:hover {
+        text-decoration: underline;
+      }
+      #errorMsgLogin {
+        color: red;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="login-form" class="container">
+      <h2>Login</h2>
+      <div class="form-control">
+        <input
+          type="email"
+          placeholder="Enter Email"
+          id="loginEmail"
+          required
+        />
+        <span></span>
+      </div>
+      <div class="form-control">
+        <input
+          type="password"
+          placeholder="Enter Password"
+          id="loginPassword"
+          required
+        />
+        <span></span>
+      </div>
+      <button type="submit">Login</button>
+      <p id="errorMsgLogin"></p>
+      <p>Don't have an account? <a href="register.html">Register here</a></p>
+    </form>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loginForm = document.getElementById("login-form");
+        const loginEmail = document.getElementById("loginEmail");
+        const loginPassword = document.getElementById("loginPassword");
+        const errorMessage = document.getElementById("errorMsgLogin");
+
+        loginForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const storedUser = JSON.parse(localStorage.getItem("user"));
+
+          if (!storedUser) {
+            errorMessage.textContent = "No registered account found.";
+            return;
+          }
+
+         
+          if (
+            loginEmail.value.trim() === storedUser.email &&
+            loginPassword.value.trim() === storedUser.password
+          ) {
+            window.location.href = "index.html";
+          } else {
+            errorMessage.textContent = "Invalid email or password.";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

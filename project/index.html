@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecommerce Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+  </head>
+  <body>
+    <!-- navbar -->
+    <header>
+      <a href="#" class="logo"> <i class="bx bxs-t-shirt"></i> Adidas </a>
+
+      <ul class="navbar">
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#new">New Arrival</a></li>
+        <li><a href="#product">Products</a></li>
+        <li><a href="#footer">Contact</a></li>
+        <li id="usernameDisplay"></li>
+      </ul>
+
+      <!-- icons -->
+      <div class="header-icons">
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <i class="bx bx-cart-alt" id="cart-icon"></i>
+      </div>
+      <div>
+        <li><a href="#contact" id="logout">logout</a></li>
+      </div>
+
+      <!-- cart Box -->
+      <div class="cart">
+        <!-- box1 -->
+        <div class="box">
+          <img src="img/new1.png" alt="T-shirt 14A" />
+          <div class="text">
+            <h3>T-shirt 14A</h3>
+            <span>$50.05</span>
+            <span>XL</span>
+          </div>
+          <i class="bx bxs-trash-alt"></i>
+        </div>
+
+        <!-- box2 -->
+        <div class="box">
+          <img src="img/new2.png" alt="T-shirt 14A" />
+          <div class="text">
+            <h3>T-shirt 14A</h3>
+            <span>$50.05</span>
+            <span>XL</span>
+          </div>
+          <i class="bx bxs-trash-alt"></i>
+        </div>
+
+        <h2>Total: $100.10</h2>
+        <a href="#" class="btn">Checkout</a>
+      </div>
+    </header>
+    <!-- home -->
+    <section id="Home" class="home">
+      <div class="home-text">
+        <span>shop now</span>
+        <h1>New Arrival of <br />fresh products</h1>
+        <a href="#" class="btn">Shop Now</a>
+      </div>
+      <div class="home-img">
+        <img src="img/home.png" alt="" />
+      </div>
+    </section>
+    <!-- New Arrival Section -->
+    <section class="new" id="new">
+      <div class="heading">
+        <h1>New <span>Arrival</span></h1>
+      </div>
+
+      <div class="slider">
+        <div class="slider-wrapper">
+          <div class="slide"><img src="img/new1.png" alt="" /></div>
+          <div class="slide"><img src="img/new2.png" alt="" /></div>
+          <div class="slide"><img src="img/new3.png" alt="" /></div>
+          <div class="slide"><img src="img/new4.png" alt="" /></div>
+          <div class="slide"><img src="img/new5.png" alt="" /></div>
+          <div class="slide"><img src="img/new6.png" alt="" /></div>
+        </div>
+
+        <button id="prevBtn">&#10094;</button>
+        <button id="nextBtn">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- product section -->
+    <section class="product" id="product">
+      <div class="heading">
+        <h1>Our <span>Products</span></h1>
+      </div>
+      <!--  -->
+      <div class="filter-buttons">
+        <button id="all-products">All Products</button>
+        <button id="trends">Trends</button>
+      </div>
+
+      <!-- <div -->
+
+      <div class="product-container">
+        <div class="box" data-id="1">
+          <img src="img/p1.jpg" alt="T-shirt 14A" />
+          <div class="content">
+            <h2>T-shirt 14A</h2>
+            <div class="stars">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star-half"></i>
+            </div>
+            <span>$50.05</span>
+            <div class="icon">
+              <i class="bx bx-bullseye view-product" data-id="1"></i>
+
+              <i
+                class="bx bxs-comment-add add-to-cart"
+                data-id="1"
+                data-name="T-shirt 14A"
+                data-price="50.05"
+                data-img="img/p1.jpg"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="box" data-id="2">
+          <img src="img/p2.jpg" alt="T-shirt 14B" />
+          <div class="content">
+            <h2>T-shirt 14B</h2>
+            <div class="stars">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star-half"></i>
+            </div>
+            <span>$45.00</span>
+            <div class="icon">
+              <i class="bx bx-bullseye view-product" data-id="2"></i>
+
+              <i
+                class="bx bxs-comment-add add-to-cart"
+                data-id="2"
+                data-name="T-shirt 14B"
+                data-price="45.00"
+                data-img="img/p2.jpg"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="box" data-id="3">
+          <img src="img/p3.jpg" alt="T-shirt 14C" />
+          <div class="content">
+            <h2>T-shirt 14C</h2>
+            <div class="stars">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star-half"></i>
+            </div>
+            <span>55.00</span>
+            <div class="icon">
+              <i class="bx bx-bullseye view-product" data-id="3"></i>
+
+              <i
+                class="bx bxs-comment-add add-to-cart"
+                data-id="3"
+                data-name="T-shirt 14C"
+                data-price="55.00"
+                data-img="img/p3.jpg"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="box" data-id="4">
+          <img src="img/p4.jpg" alt="T-shirt 14D" />
+          <div class="content">
+            <h2>T-shirt 14D</h2>
+            <div class="stars">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star-half"></i>
+            </div>
+            <span>$60.05</span>
+            <div class="icon">
+              <i class="bx bx-bullseye view-product" data-id="4"></i>
+
+              <i
+                class="bx bxs-comment-add add-to-cart"
+                data-id="4"
+                data-name="T-shirt 14D"
+                data-price="60.05"
+                data-img="img/p4.jpg"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="box" data-id="5">
+          <img src="img/p5.jpg" alt="T-shirt 14E" />
+          <div class="content">
+            <h2>T-shirt 14E</h2>
+            <div class="stars">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star-half"></i>
+            </div>
+            <span>$66.00</span>
+            <div class="icon">
+              <i class="bx bx-bullseye view-product" data-id="5"></i>
+
+              <i
+                class="bx bxs-comment-add add-to-cart"
+                data-id="5"
+                data-name="T-shirt 14E"
+                data-price="66.00"
+                data-img="img/p5.jpg"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="box" data-id="6">
+          <img src="img/p6.jpg" alt="T-shirt 14F" />
+          <div class="content">
+            <h2>T-shirt 14F</h2>
+            <div class="stars">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star-half"></i>
+            </div>
+            <span>$70.00</span>
+            <div class="icon">
+              <i class="bx bx-bullseye view-product" data-id="6"></i>
+
+              <i
+                class="bx bxs-comment-add add-to-cart"
+                data-id="6"
+                data-name="T-shirt 14F"
+                data-price="70.00"
+                data-img="img/p6.jpg"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="box" data-id="7">
+          <img src="img/p7.jpg" alt="T-shirt 14G" />
+          <div class="content">
+            <h2>T-shirt 14G</h2>
+            <div class="stars">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star-half"></i>
+            </div>
+            <span>$80.05</span>
+            <div class="icon">
+              <i class="bx bx-bullseye view-product" data-id="7"></i>
+
+              <i
+                class="bx bxs-comment-add add-to-cart"
+                data-id="7"
+                data-name="T-shirt 14G"
+                data-price="80.05"
+                data-img="img/p7.jpg"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="box" data-id="8">
+          <img src="img/p8.jpg" alt="T-shirt 14H" />
+          <div class="content">
+            <h2>T-shirt 14H</h2>
+            <div class="stars">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star-half"></i>
+            </div>
+            <span>$57.00</span>
+            <div class="icon">
+              <i class="bx bx-bullseye view-product" data-id="8"></i>
+
+              <i
+                class="bx bxs-comment-add add-to-cart"
+                data-id="8"
+                data-name="T-shirt 14H"
+                data-price="57.00"
+                data-img="img/p8.jpg"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="box" data-id="9">
+          <img src="img/p4.jpg" alt="T-shirt 14J" />
+          <div class="content">
+            <h2>T-shirt 14J</h2>
+            <div class="stars">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star-half"></i>
+            </div>
+            <span>44.00</span>
+            <div class="icon">
+              <i class="bx bx-bullseye view-product" data-id="9"></i>
+
+              <i
+                class="bx bxs-comment-add add-to-cart"
+                data-id="9"
+                data-name="T-shirt 14J"
+                data-price="44.00"
+                data-img="img/p9.jpg"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Start Footer -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer_header">
+          <h1 class="logo">Adidas</h1>
+          <ul class="social-links">
+            <li>
+              <a href="#"><i class="bx bxl-facebook"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bx bxl-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bx bxl-pinterest"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bx bxl-instagram"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-content">
+          <div class="col">
+            <h2>Our Brand</h2>
+            <ul>
+              <li><a href="#">How we work?</a></li>
+              <li><a href="#">Why Insure?</a></li>
+              <li><a href="#">View Plans</a></li>
+              <li><a href="#">Reviews</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2>Help</h2>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Cookies</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2>Contact</h2>
+            <ul>
+              <li><a href="#">Sales</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Live Chat</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2>Others</h2>
+            <ul>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Licenses</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="back-to-home" id="backToHome" onclick="scrollToTop()">
+          <i class="bx bx-up-arrow-alt"></i>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Ecommerce App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      
+
+      :root {
+        --main-color: #fda702;
+        --second-color: #ebeff2;
+        --text-color: #fff;
+        --bg-color: #1a1a1a; 
+        --box-shadow: 2px 2px 10px 4px rgba(14, 55, 54, 0.15);
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+      .container {
+        width: 90%;
+        max-width: 400px;
+        background: #fff;
+        padding: 30px 40px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        text-align: center;
+      }
+      h2 {
+        color: var(--main-color);
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+      .form-control {
+        margin-bottom: 20px;
+        position: relative;
+        text-align: left;
+      }
+      .form-control input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+      .form-control.success input {
+        border-color: green;
+      }
+      .form-control.error input {
+        border-color: red;
+      }
+      .form-control span {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+        display: block;
+        visibility: hidden;
+      }
+      .form-control.error span {
+        visibility: visible;
+      }
+      button {
+        width: 100%;
+        padding: 12px;
+        background-color: var(--main-color);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      
+      p {
+        font-size: 14px;
+        color: #555;
+        margin-top: 10px;
+      }
+      p a {
+        color: var(--main-color);
+        text-decoration: none;
+        font-weight: bold;
+      }
+      p a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="register-form" class="container">
+      <h2>Register</h2>
+      <div class="form-control">
+        <input
+          type="text"
+          placeholder="Enter your name"
+          id="regName"
+          required
+        />
+        <span></span>
+      </div>
+      <div class="form-control">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          id="regEmail"
+          required
+        />
+        <span></span>
+      </div>
+      <div class="form-control">
+        <input
+          type="password"
+          placeholder="Enter your password"
+          id="regPassword"
+          required
+        />
+        <span></span>
+      </div>
+      <div class="form-control">
+        <input
+          type="password"
+          placeholder="Confirm your password"
+          id="regConfirmPassword"
+          required
+        />
+        <span></span>
+      </div>
+      <button type="submit">Register</button>
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </form>
+
+    <script>
+      const form = document.getElementById("register-form");
+      const regName = document.getElementById("regName");
+      const regEmail = document.getElementById("regEmail");
+      const regPassword = document.getElementById("regPassword");
+      const regConfirmPassword = document.getElementById("regConfirmPassword");
+
+      function showError(input, message) {
+        const formControl = input.parentElement;
+        formControl.className = "form-control error";
+        const span = formControl.querySelector("span");
+        span.innerText = message;
+      }
+      function showSuccess(input) {
+        const formControl = input.parentElement;
+        formControl.className = "form-control success";
+      }
+      function isValidEmail(email) {
+        const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return re.test(email);
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let isValid = true;
+
+        
+        if (regName.value.trim() === "") {
+          showError(regName, "Name is required");
+          isValid = false;
+        } else {
+          showSuccess(regName);
+        }
+
+        
+        if (regEmail.value.trim() === "") {
+          showError(regEmail, "Email is required");
+          isValid = false;
+        } else if (!isValidEmail(regEmail.value.trim())) {
+          showError(regEmail, "Enter a valid email address");
+          isValid = false;
+        } else {
+          showSuccess(regEmail);
+        }
+
+        
+        if (regPassword.value.trim() === "") {
+          showError(regPassword, "Password is required");
+          isValid = false;
+        } else if (regPassword.value.trim().length < 6) {
+          showError(regPassword, "Password must be at least 6 characters");
+          isValid = false;
+        } else {
+          showSuccess(regPassword);
+        }
+
+        
+        if (regConfirmPassword.value.trim() === "") {
+          showError(regConfirmPassword, "Confirm password is required");
+          isValid = false;
+        } else if (regPassword.value !== regConfirmPassword.value) {
+          showError(regConfirmPassword, "Passwords do not match");
+          isValid = false;
+        } else {
+          showSuccess(regConfirmPassword);
+        }
+
+        if (!isValid) {
+          return;
+        }
+
+        
+        const user = {
+          name: regName.value.trim(),
+          email: regEmail.value.trim(),
+          password: regPassword.value.trim(),
+        };
+        localStorage.setItem("user", JSON.stringify(user));
+
+        console.log("Registration successful. Redirecting...");
+
+ 
+        setTimeout(() => {
+          window.location.href = "login.html";
+        }, 500);
+      });
+    </script>
+  </body>
+</html>
